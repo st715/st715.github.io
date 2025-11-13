@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人学术主页 - 医学影像研究</title>
+    <title>孙甜 - 个人学术主页</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -169,55 +169,66 @@
             margin: 0.5rem auto;
         }
 
-        /* 关于我部分 */
-        .about-content {
+        /* 个人信息部分 */
+        .personal-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
         }
 
-        .about-text h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        .education-item {
+        .info-item {
             margin-bottom: 1.5rem;
         }
 
-        .education-item h4 {
+        .info-item h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            font-size: 1.1rem;
+        }
+
+        .resume-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        /* 教育背景 */
+        .education-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .education-item h3 {
             color: var(--primary);
+            margin-bottom: 1rem;
         }
 
         .education-item .date {
             color: var(--secondary);
             font-style: italic;
+            margin-bottom: 0.5rem;
         }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .skill-tag {
-            background: var(--secondary);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* 研究方向 */
-        .research-grid {
+        /* 校园经历 */
+        .experience-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .research-card {
+        .experience-card {
             background: white;
             padding: 2rem;
             border-radius: 10px;
@@ -225,18 +236,24 @@
             transition: transform 0.3s;
         }
 
-        .research-card:hover {
+        .experience-card:hover {
             transform: translateY(-5px);
         }
 
-        .research-card i {
+        .experience-card i {
             font-size: 2.5rem;
             color: var(--accent);
             margin-bottom: 1rem;
         }
 
-        .research-card h3 {
+        .experience-card h3 {
             color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .experience-card .date {
+            color: var(--secondary);
+            font-style: italic;
             margin-bottom: 1rem;
         }
 
@@ -290,82 +307,6 @@
             margin-top: 1.5rem;
         }
 
-        /* 发表论文 */
-        .publications-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .publication-item {
-            background: white;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-
-        .publication-item h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .publication-authors {
-            color: var(--secondary);
-            font-style: italic;
-            margin-bottom: 0.5rem;
-        }
-
-        .publication-journal {
-            color: #666;
-        }
-
-        /* 联系方式 */
-        .contact-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--accent);
-            width: 40px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--secondary);
-            color: white;
-            border-radius: 50%;
-            transition: background 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--accent);
-        }
-
         /* 页脚 */
         footer {
             background: var(--primary);
@@ -408,7 +349,7 @@
                 flex-direction: column;
             }
 
-            .about-content {
+            .personal-info {
                 grid-template-columns: 1fr;
             }
 
@@ -423,14 +364,13 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">学术主页</div>
+                <div class="logo">孙甜 - 学术主页</div>
                 <ul class="nav-links">
                     <li><a href="#home">首页</a></li>
-                    <li><a href="#about">关于我</a></li>
-                    <li><a href="#research">研究方向</a></li>
+                    <li><a href="#personal">个人信息</a></li>
+                    <li><a href="#education">教育背景</a></li>
+                    <li><a href="#experience">校园经历</a></li>
                     <li><a href="#knowledge">超声成像知识图谱</a></li>
-                    <li><a href="#publications">发表论文</a></li>
-                    <li><a href="#contact">联系方式</a></li>
                 </ul>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -445,78 +385,98 @@
             <div class="profile-container">
                 <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="个人照片" class="profile-img">
                 <div class="hero-content">
-                    <h1>张明 博士</h1>
-                    <p>医学影像研究员 | 超声成像与人工智能</p>
-                    <p>专注于医学影像分析、超声成像技术和医疗人工智能应用研究</p>
-                    <a href="#about" class="btn">了解更多</a>
+                    <h1>孙甜</h1>
+                    <p>天津医科大学 | 医学影像学专业</p>
+                    <p>专注于医学影像技术学习与研究</p>
+                    <a href="#personal" class="btn">了解更多</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 关于我 -->
-    <section id="about" class="section">
+    <!-- 个人信息 -->
+    <section id="personal" class="section">
         <div class="container">
-            <h2 class="section-title">关于我</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>个人简介</h3>
-                    <p>现任XX大学医学影像研究中心副教授，博士生导师。主要从事医学影像分析、超声成像技术和人工智能在医疗领域的应用研究。</p>
-                    <p>在相关领域发表SCI论文30余篇，主持国家自然科学基金项目3项，参与国家重点研发计划2项。获得国家科技进步二等奖1项，省部级科技奖励3项。</p>
-                    
-                    <h3>教育背景</h3>
-                    <div class="education-item">
-                        <h4>博士学位 - 生物医学工程</h4>
-                        <p class="date">2015-2019 | XX大学</p>
-                        <p>研究方向：医学影像处理与人工智能</p>
+            <h2 class="section-title">个人信息</h2>
+            <div class="personal-info">
+                <div>
+                    <div class="info-item">
+                        <h3>姓名</h3>
+                        <p>孙甜</p>
                     </div>
-                    <div class="education-item">
-                        <h4>硕士学位 - 计算机科学</h4>
-                        <p class="date">2012-2015 | XX大学</p>
-                        <p>研究方向：图像处理与模式识别</p>
+                    <div class="info-item">
+                        <h3>出生年月</h3>
+                        <p>2004年8月</p>
                     </div>
-                    
-                    <h3>专业技能</h3>
-                    <div class="skills">
-                        <span class="skill-tag">医学影像分析</span>
-                        <span class="skill-tag">超声成像技术</span>
-                        <span class="skill-tag">深度学习</span>
-                        <span class="skill-tag">Python编程</span>
-                        <span class="skill-tag">数据可视化</span>
-                        <span class="skill-tag">知识图谱</span>
+                    <div class="info-item">
+                        <h3>手机号码</h3>
+                        <p>15822900768</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>籍贯</h3>
+                        <p>天津市</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>就读学校</h3>
+                        <p>天津医科大学</p>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="研究工作" style="width:100%; border-radius:10px; box-shadow: var(--shadow);">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="简历" class="resume-image">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 研究方向 -->
-    <section id="research" class="section">
+    <!-- 教育背景 -->
+    <section id="education" class="section">
         <div class="container">
-            <h2 class="section-title">研究方向</h2>
-            <div class="research-grid">
-                <div class="research-card">
-                    <i class="fas fa-wave-square"></i>
-                    <h3>超声成像技术</h3>
-                    <p>研究新型超声成像方法，包括高频超声、三维超声和弹性成像技术，提高图像分辨率和诊断准确性。</p>
+            <h2 class="section-title">教育背景</h2>
+            <div class="education-content">
+                <div class="education-item">
+                    <h3>天津医科大学</h3>
+                    <p class="date">2022年9月 - 至今</p>
+                    <p><strong>年级：</strong>2022级</p>
+                    <p><strong>专业：</strong>医学影像学</p>
+                    <p><strong>学号：</strong>2022082123</p>
                 </div>
-                <div class="research-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>医学人工智能</h3>
-                    <p>开发基于深度学习的医学影像分析算法，实现病变自动检测、分割和分类，辅助临床诊断决策。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 校园经历 -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">校园经历</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <i class="fas fa-users"></i>
+                    <h3>学生会社团管理中心干事</h3>
+                    <p class="date">2022.09 - 2023.07</p>
+                    <p>参与组织和管理学院社团活动，协调社团资源，促进社团发展。</p>
                 </div>
-                <div class="research-card">
-                    <i class="fas fa-project-diagram"></i>
-                    <h3>医学知识图谱</h3>
-                    <p>构建医学影像领域的知识图谱，整合多源医学数据，支持智能诊断和临床决策支持系统。</p>
+                <div class="experience-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>学生会权益联络部干事</h3>
+                    <p class="date">2022.09 - 2024.07</p>
+                    <p>负责学生权益维护，沟通协调学生与学院之间的关系，组织相关活动。</p>
                 </div>
-                <div class="research-card">
-                    <i class="fas fa-diagnoses"></i>
-                    <h3>计算机辅助诊断</h3>
-                    <p>研发超声影像的计算机辅助诊断系统，提高疾病早期检测率和诊断准确性。</p>
+                <div class="experience-card">
+                    <i class="fas fa-award"></i>
+                    <h3>校级三等奖学金</h3>
+                    <p class="date">2022-2023年度</p>
+                    <p>因学业成绩优秀获得校级三等奖学金。</p>
+                </div>
+                <div class="experience-card">
+                    <i class="fas fa-language"></i>
+                    <h3>英语能力</h3>
+                    <p>通过CET4和CET6考试，具备良好的英语阅读和沟通能力。</p>
+                </div>
+                <div class="experience-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>天津市化学竞赛三等奖</h3>
+                    <p class="date">2024年</p>
+                    <p>在天津市化学竞赛中获得三等奖，展现了对化学知识的掌握和应用能力。</p>
                 </div>
             </div>
         </div>
@@ -533,7 +493,6 @@
                     <button data-filter="equipment">设备与技术</button>
                     <button data-filter="modes">成像模式</button>
                     <button data-filter="applications">临床应用</button>
-                    <button data-filter="anatomy">解剖结构</button>
                 </div>
                 <div id="knowledge-graph"></div>
                 <div class="kg-info">
@@ -544,87 +503,10 @@
         </div>
     </section>
 
-    <!-- 发表论文 -->
-    <section id="publications" class="section">
-        <div class="container">
-            <h2 class="section-title">发表论文</h2>
-            <div class="publications-list">
-                <div class="publication-item">
-                    <h3>基于深度学习的肝脏超声图像自动分割方法</h3>
-                    <p class="publication-authors">张明, 李华, 王强</p>
-                    <p class="publication-journal">Medical Image Analysis, 2023, 45(3): 102-115</p>
-                </div>
-                <div class="publication-item">
-                    <h3>超声弹性成像在乳腺癌诊断中的应用研究</h3>
-                    <p class="publication-authors">张明, 赵雪, 刘伟</p>
-                    <p class="publication-journal">Ultrasound in Medicine & Biology, 2022, 48(5): 789-801</p>
-                </div>
-                <div class="publication-item">
-                    <h3>医学影像知识图谱构建方法与应用</h3>
-                    <p class="publication-authors">张明, 陈静, 孙磊</p>
-                    <p class="publication-journal">Journal of Medical Systems, 2021, 39(8): 112-125</p>
-                </div>
-                <div class="publication-item">
-                    <h3>三维超声在胎儿先天性心脏病筛查中的价值</h3>
-                    <p class="publication-authors">王强, 张明, 李华</p>
-                    <p class="publication-journal">中国医学影像技术, 2020, 36(4): 501-505</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系方式 -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">联系方式</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>邮箱</h3>
-                            <p>zhangming@university.edu</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>电话</h3>
-                            <p>+86 138-XXXX-XXXX</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>地址</h3>
-                            <p>XX市XX区XX路XX号<br>XX大学医学影像研究中心</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-researchgate"></i></a>
-                        <a href="#"><i class="fab fa-google-scholar"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>发送消息</h3>
-                    <form id="contactForm">
-                        <input type="text" placeholder="您的姓名" required>
-                        <input type="email" placeholder="您的邮箱" required>
-                        <input type="text" placeholder="主题" required>
-                        <textarea placeholder="您的消息" rows="5" required></textarea>
-                        <button type="submit" class="btn">发送消息</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- 页脚 -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 张明 - 个人学术主页. 保留所有权利.</p>
+            <p>&copy; 2024 孙甜 - 个人学术主页. 保留所有权利.</p>
         </div>
     </footer>
 
@@ -670,6 +552,7 @@
                 { id: "reflection", name: "反射", type: "physics", description: "声波在遇到不同声阻抗的组织界面时部分返回的现象" },
                 { id: "refraction", name: "折射", type: "physics", description: "声波穿过不同组织界面时改变传播方向的现象" },
                 { id: "attenuation", name: "衰减", type: "physics", description: "声波在组织中传播时能量逐渐减小的现象" },
+                { id: "doppler-effect", name: "多普勒效应", type: "physics", description: "波源与观察者相对运动时，波的频率发生变化的现象" },
                 
                 // 设备与技术
                 { id: "ultrasound-machine", name: "超声设备", type: "equipment", description: "产生、接收和处理超声信号的医疗设备" },
@@ -699,17 +582,7 @@
                 { id: "musculoskeletal", name: "肌肉骨骼超声", type: "applications", description: "评估肌肉、肌腱、韧带和关节" },
                 { id: "breast", name: "乳腺超声", type: "applications", description: "评估乳腺肿块和辅助乳腺癌诊断" },
                 { id: "thyroid", name: "甲状腺超声", type: "applications", description: "评估甲状腺大小、结构和检测结节" },
-                { id: "emergency", name: "急诊超声", type: "applications", description: "快速评估创伤、急腹症和心血管急症" },
-                
-                // 解剖结构
-                { id: "liver", name: "肝脏", type: "anatomy", description: "人体最大的实质性器官，参与代谢、解毒和合成" },
-                { id: "gallbladder", name: "胆囊", type: "anatomy", description: "储存和浓缩胆汁的梨形器官" },
-                { id: "pancreas", name: "胰腺", type: "anatomy", description: "兼具内分泌和外分泌功能的腺体" },
-                { id: "spleen", name: "脾脏", type: "anatomy", description: "免疫器官，参与血液过滤和储存" },
-                { id: "kidney", name: "肾脏", type: "anatomy", description: "过滤血液、产生尿液的成对器官" },
-                { id: "heart", name: "心脏", type: "anatomy", description: "泵血器官，维持血液循环" },
-                { id: "uterus", name: "子宫", type: "anatomy", description: "女性生殖器官，孕育胎儿的场所" },
-                { id: "fetus", name: "胎儿", type: "anatomy", description: "发育中的人类胚胎，从第8周直到出生" }
+                { id: "emergency", name: "急诊超声", type: "applications", description: "快速评估创伤、急腹症和心血管急症" }
             ],
             links: [
                 // 物理原理关系
@@ -719,6 +592,7 @@
                 { source: "acoustic-impedance", target: "refraction" },
                 { source: "ultrasound", target: "attenuation" },
                 { source: "piezoelectric", target: "transducer" },
+                { source: "ultrasound", target: "doppler-effect" },
                 
                 // 设备与技术关系
                 { source: "ultrasound-machine", target: "probe" },
@@ -726,6 +600,7 @@
                 { source: "probe", target: "convex-probe" },
                 { source: "probe", target: "sector-probe" },
                 { source: "ultrasound-machine", target: "doppler" },
+                { source: "doppler-effect", target: "doppler" },
                 { source: "ultrasound-machine", target: "elastography" },
                 { source: "ultrasound-machine", target: "contrast-enhanced" },
                 
@@ -750,18 +625,8 @@
                 { source: "b-mode", target: "emergency" },
                 { source: "elastography", target: "breast" },
                 { source: "elastography", target: "thyroid" },
-                { source: "contrast-enhanced", target: "liver" },
-                { source: "contrast-enhanced", target: "cardiac" },
-                
-                // 解剖结构关系
-                { source: "abdominal", target: "liver" },
-                { source: "abdominal", target: "gallbladder" },
-                { source: "abdominal", target: "pancreas" },
-                { source: "abdominal", target: "spleen" },
-                { source: "abdominal", target: "kidney" },
-                { source: "cardiac", target: "heart" },
-                { source: "obstetrics", target: "uterus" },
-                { source: "obstetrics", target: "fetus" }
+                { source: "contrast-enhanced", target: "abdominal" },
+                { source: "contrast-enhanced", target: "cardiac" }
             ]
         };
 
@@ -781,8 +646,8 @@
 
             // 颜色映射
             const colorScale = d3.scaleOrdinal()
-                .domain(["physics", "equipment", "modes", "applications", "anatomy"])
-                .range(["#e74c3c", "#3498db", "#2ecc71", "#f39c12", "#9b59b6"]);
+                .domain(["physics", "equipment", "modes", "applications"])
+                .range(["#e74c3c", "#3498db", "#2ecc71", "#f39c12"]);
 
             const simulation = d3.forceSimulation(ultrasoundData.nodes)
                 .force("link", d3.forceLink(ultrasoundData.links).id(d => d.id).distance(100))
@@ -896,8 +761,7 @@
                     "physics": "物理原理",
                     "equipment": "设备与技术",
                     "modes": "成像模式",
-                    "applications": "临床应用",
-                    "anatomy": "解剖结构"
+                    "applications": "临床应用"
                 };
                 return typeNames[type] || type;
             }
@@ -921,13 +785,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             // 等待页面完全加载后再创建图谱
             setTimeout(createKnowledgeGraph, 100);
-            
-            // 联系表单提交
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('感谢您的消息！我会尽快回复。');
-                this.reset();
-            });
         });
     </script>
 </body>
