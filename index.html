@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人学术主页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#research">研究方向</a></li>
+                <li><a href="#knowledge">MRI知识图谱</a></li>
+                <li><a href="#contact">联系方式</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="profile">
+                <img src="profile.jpg" alt="个人照片" class="profile-img">
+                <h1>您的姓名 博士</h1>
+                <p>医学影像研究员 | 人工智能医疗应用</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>关于我</h2>
+            <div class="about-content">
+                <p>请在这里填写您的个人介绍...</p>
+                <div class="education">
+                    <h3>教育背景</h3>
+                    <ul>
+                        <li>XX大学 专业 学位 (年份)</li>
+                        <li>XX大学 专业 学位 (年份)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="section">
+        <div class="container">
+            <h2>研究方向</h2>
+            <div class="research-grid">
+                <div class="research-item">
+                    <h3>医学影像分析</h3>
+                    <p>基于深度学习的医学图像分析</p>
+                </div>
+                <div class="research-item">
+                    <h3>知识图谱构建</h3>
+                    <p>医学领域知识的结构化表示</p>
+                </div>
+                <div class="research-item">
+                    <h3>多模态融合</h3>
+                    <p>结合多源数据的智能诊断系统</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="knowledge" class="section">
+        <div class="container">
+            <h2>MRI知识图谱</h2>
+            <div id="knowledge-graph"></div>
+            <div class="kg-controls">
+                <button onclick="filterByType('all')">全部</button>
+                <button onclick="filterByType('sequence')">序列类型</button>
+                <button onclick="filterByType('anatomy')">解剖结构</button>
+                <button onclick="filterByType('application')">临床应用</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>联系方式</h2>
+            <div class="contact-info">
+                <p>📧 您的邮箱@example.com</p>
+                <p>🏢 您的单位地址</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 您的姓名 - 个人学术主页</p>
+        </div>
+    </footer>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
